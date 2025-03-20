@@ -7,8 +7,11 @@ run :
 python main.py
 
 
-upload raw data
-example:
+# upload raw data .txt file 
+open note pad make data like this Image example :
+![image](https://github.com/user-attachments/assets/b42ee838-8f2b-4151-a7d1-e4eaf3de146f)
+and then save it to data.txt then run main.py and upload .txt file then you ill get gantt chatt
+# example:
 Sr No	Task Name	Duration (Days)	Start Date	Finish Date
 1	Project topic deciding	3	28-06-2024	01-07-2024
 2	Collecting data	3	03-07-2024	06-07-2024
@@ -23,8 +26,7 @@ Sr No	Task Name	Duration (Days)	Start Date	Finish Date
 11	System testing	10	10-02-2025	20-02-2025
 
 
-![image](https://github.com/user-attachments/assets/b42ee838-8f2b-4151-a7d1-e4eaf3de146f)
+output:
+![image](https://github.com/user-attachments/assets/7f79ddc6-acc6-4fc9-b871-d37eb59e8226)
 
 
-
-you'll get gantt chat
