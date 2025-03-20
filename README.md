@@ -16,7 +16,7 @@ Make sure you have Python installed, then install the required dependencies:
 2. Upload a `.txt` file containing project data when prompted.
 
 ## Upload Raw Data (.txt file)
-## Note : Do not Upload the Save data Make Chages in table Then uplaod
+## Note : Do not Upload the Same data file Make Chages in Date and table Then uplaod
 
 1. Open Notepad and enter data in the following format.
 2. Save the file as `data.txt`.
