@@ -1,9 +1,11 @@
 import tkinter as tk
-from tkinter import filedialog, messagebox
+from tkinter import filedialog, messagebox, colorchooser
 import matplotlib.pyplot as plt
 import pandas as pd
 import matplotlib.dates as mdates
 from datetime import datetime
+
+selected_colors = ["skyblue", "lightgreen", "lightcoral", "lightpink", "lightyellow"]
 
 def load_data():
     filepath = filedialog.askopenfilename(title="Select a Text File", filetypes=[("Text Files", "*.txt")])
@@ -41,7 +43,7 @@ def create_gantt_chart(data):
     
     fig, ax = plt.subplots(figsize=(12, 6))
     for i, (task, start, duration) in enumerate(zip(df["Task Name"], df["Start Date"], df["Duration"])):
-        ax.barh(task, duration, left=start, color="skyblue", edgecolor="black")
+        ax.barh(task, duration, left=start, color=selected_colors[i % len(selected_colors)], edgecolor="black")
     
     ax.xaxis.set_major_locator(mdates.MonthLocator())
     ax.xaxis.set_major_formatter(mdates.DateFormatter("%b %Y"))
@@ -52,16 +54,28 @@ def create_gantt_chart(data):
     plt.xticks(rotation=45)
     plt.show()
 
+def choose_color(index):
+    color = colorchooser.askcolor()[1]
+    if color:
+        selected_colors[index] = color
+
 def main():
     root = tk.Tk()
     root.title("KAIMU - Gantt Chart")
-    root.geometry("400x200")
+    root.geometry("400x300")
     
     label = tk.Label(root, text="Load a text file containing project data:")
     label.pack(pady=10)
     
     button = tk.Button(root, text="Load Data", command=load_data)
     button.pack(pady=10)
+    
+    color_buttons_frame = tk.Frame(root)
+    color_buttons_frame.pack(pady=10)
+    
+    for i in range(len(selected_colors)):
+        color_button = tk.Button(color_buttons_frame, text=f"Choose Color {i+1}", command=lambda i=i: choose_color(i))
+        color_button.grid(row=0, column=i, padx=5)
     
     root.mainloop()
 
