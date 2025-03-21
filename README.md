@@ -6,6 +6,7 @@ A simple tool to generate Gantt charts from a `.txt` file using Python and Tkint
 
 ## Installation
 
+<b>pip install matplotlib pandas</b><br>
 Make sure you have Python installed, then install the required dependencies:
 
 
